@@ -8,8 +8,9 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Layouts />}>
           <Route index element={<Soldier />} />
+          <Route path="home" element={<Soldier />} />
           <Route path="multiplayer" element={<Soldier />} />
-          <Route path="campagain" element={<Soldier />} />
+          <Route path="campaign" element={<Soldier />} />
           <Route path="soldier" element={<Soldier />} />
           <Route path="store" element={<Soldier />} />
           <Route path="more" element={<Soldier />} />

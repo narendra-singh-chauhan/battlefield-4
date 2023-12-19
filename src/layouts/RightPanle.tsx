@@ -1,48 +1,55 @@
 import Box from "@mui/material/Box";
-import IconButton from '@mui/material/IconButton';
-import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
-import { useState } from "react";
+import { StyledRightPanel,StyledStatusAvatar } from "../styles";
+import {
+    squad,
+    join,
+    online,
+    maryjane,
+    offline,
+    sunny,
+} from '../assets';
 
 const RightPanel = () => {
-    const [selectedMenu, setSelectedMenu] = useState(2);
-
     const menus = [
         {
             id: 1,
-            prefix: '+',
-            img: '',
+            prefix: squad,
+            img: join,
+            status: 'join'
         },
         {
             id: 2,
-            prefix: '+',
-            img: '',
+            prefix: online,
+            img: maryjane,
+            status: 'online',
         },
         {
             id: 3,
-            prefix: '+',
-            img: '',
+            prefix: offline,
+            img: sunny,
+            status: 'offline'
         },
     ];
 
     return (
-        <Box
-            sx={{
-                maxWidth: '100px',
-                height: '100%',
-            }}
-        >
+        <StyledRightPanel>
             <Stack spacing={2} paddingTop="50px">
-                {menus.map(({ id, prefix, img }) => (
+                {menus.map(({ id, prefix, img, status }) => (
                     <Stack spacing={1} key={id}>
                         <Box>
-                            {prefix}
+                            <Box component="img" src={prefix} />
                         </Box>
-                        <Avatar src={img} alt="+" variant="square"/>
+                        <StyledStatusAvatar
+                            src={img}
+                            alt={status}
+                            variant="square"
+                            status={status}
+                        />
                     </Stack>
                 ))}
             </Stack>
-        </Box>
+        </StyledRightPanel>
     );
 };
 
