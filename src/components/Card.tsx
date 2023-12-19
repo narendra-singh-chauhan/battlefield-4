@@ -18,6 +18,9 @@ const Card = ({ name, img, title, value }: Asset) => {
                     justifyContent: 'space-between',
                     alignItems: 'flex-start',
                     borderRadius: '4px',
+                    '&:hover': {
+                        backgroundColor: '#0f0f0f40',
+                    },
                 }}
             >
                 <Typography sx={{ fontSize: '16px', opacity: 0.6, fontWeight: 600, textTransform: 'uppercase' }}>

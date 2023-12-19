@@ -12,11 +12,17 @@ const Row = ({ name, total, count }: Accessory) => {
         alignItems="center"
         sx={{
             borderTop: '1px solid #ffffff1a',
+            paddingInline:'10px',
             paddingBlock: '15px',
+            borderRadius: '4px',
             '&:last-child': {
                 borderBottom: '1px solid #ffffff1a',
                 paddingBottom: '15px',
             },
+            '&:hover': {
+                backgroundColor: 'white',
+                color:'black'
+            }
         }}
         >
             <Typography sx={{fontSize: '18px', fontWeight: 500, textTransform:'uppercase'}}>
